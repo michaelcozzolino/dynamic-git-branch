@@ -1,18 +1,16 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.michaelcozzolino.dynamicgitbranch</id>
-    <name>dynamic-git-branch Template</name>
+    <id>com.michaelcozzolino.dynamicgitbranch</id>
+    <name>dynamic-git-branch</name>
     <vendor>michaelcozzolino</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.michaelcozzolino.dynamicgitbranch.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.michaelcozzolino.dynamicgitbranch.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
+    <depends>Git4Idea</depends>
+    <actions>
+        <action id="com.michaelcozzolino.dynamicgitbranch.actions.PopupDialogAction"
+                class="com.michaelcozzolino.dynamicgitbranch.actions.PopupDialogAction" text="Test action"
+                description="popup action test">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

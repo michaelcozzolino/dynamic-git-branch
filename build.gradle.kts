@@ -18,17 +18,30 @@ version = properties("pluginVersion").get()
 
 // Configure project's dependencies
 repositories {
+//    mavenCentral()
+    maven("https://www.jetbrains.com/intellij-repository/releases")
+    maven("https://dl.bintray.com/jetbrains/intellij-third-party-dependencies")
+    maven("https://cache-redirector.jetbrains.com/repo.maven.apache.org/maven2")
+    maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
+    //serviceMessages
+    maven("https://cache-redirector.jetbrains.com/download.jetbrains.com/teamcity-repository")
+    // pgp-verifier
+    maven("https://cache-redirector.jetbrains.com/download-pgp-verifier")
+    // Grazie
+    maven("https://cache-redirector.jetbrains.com/packages.jetbrains.team/maven/p/grazi/grazie-platform-public")
     mavenCentral()
 }
 
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
 //    implementation(libs.annotations)
+// https://mvnrepository.com/artifact/com.jetbrains.intellij.vcs/git
+    runtimeOnly("com.jetbrains.intellij.vcs:git:231.9011.34")
 }
 
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
