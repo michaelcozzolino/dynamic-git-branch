@@ -12,5 +12,10 @@
                 description="popup action test">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
+        <action id="com.michaelcozzolino.dynamicgitbranch.actions.GitNewBranchAction"
+                class="com.michaelcozzolino.dynamicgitbranch.actions.GitNewBranchAction" text="New branch"
+                description="branch test">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
     </actions>
 </idea-plugin>

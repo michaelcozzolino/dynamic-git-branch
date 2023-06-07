@@ -9,6 +9,9 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.pom.Navigatable;
+import git4idea.actions.branch.GitBranchActionsUtil;
+import git4idea.actions.branch.GitCheckoutAction;
+import git4idea.actions.branch.GitNewBranchAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +58,6 @@ public class PopupDialogAction extends AnAction {
    */
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
-
     // Using the event, create and show a dialog
     Project currentProject = event.getProject();
     StringBuilder dlgMsg = new StringBuilder(event.getPresentation().getText() + " Selected!");
